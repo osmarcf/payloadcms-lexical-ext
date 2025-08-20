@@ -28,6 +28,8 @@ export const createPlugin = ({ featureKey, command, createNode }: PluginProps): 
 		const [ selectionState, setSelectionState ] = useState<BaseSelection | null>(null)
 		const { openModal } = useModal()
 		const { collectionSlug } = useDocumentInfo()
+		const { fieldProps } = useEditorConfigContext()
+		const { schemaPath } = fieldProps
 
 		useEffect(() => {
 			return editor.registerCommand(
@@ -70,7 +72,7 @@ export const createPlugin = ({ featureKey, command, createNode }: PluginProps): 
 				featureKey={ featureKey }
 				drawerSlug={ featureKey + '-drawer' }
 				handleDrawerSubmit={onSubmit}
-				schemaPath={ collectionSlug + '.content' }
+				schemaPath={ schemaPath }
 				schemaPathSuffix={ featureKey }
 			/>
 		)
