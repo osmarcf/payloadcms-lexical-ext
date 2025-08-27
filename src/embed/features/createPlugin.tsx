@@ -12,7 +12,7 @@ import {
 	LexicalCommand
 } from '@payloadcms/richtext-lexical/lexical';
 import { $insertNodeToNearestRoot } from '@payloadcms/richtext-lexical/lexical/utils'
-import { FieldsDrawer } from '@payloadcms/richtext-lexical/client';
+import { FieldsDrawer, useEditorConfigContext } from '@payloadcms/richtext-lexical/client';
 import { useDocumentInfo, useModal } from '@payloadcms/ui';
 import type { PluginComponent } from '@payloadcms/richtext-lexical';
 
